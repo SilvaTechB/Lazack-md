@@ -1,3 +1,4 @@
+
 import db from '../lib/database.js'
 import { promises } from 'fs'
 import fs from 'fs'
@@ -10,16 +11,16 @@ let totalf = Object.values(global.plugins).filter(v => v.help && v.tags).length
 let tags = { 'main': 'Main' }
 const defaultMenu = {
   before: `┏━━━ ❮❮ 𝙼𝙴𝙽𝚄 ❯❯
-┃✦ *𝙽𝚊𝚖𝚎:* ${global.author}
-┃✦ *𝚃𝚘𝚝𝚊𝚕:* ${totalf} 
-┃✦ *𝚅𝚎𝚛𝚜𝚒𝚘𝚗:* V-02
-┃✦ *𝙿𝚛𝚎𝚏𝚒𝚡:* Any Prefix
-┃✦ *Creator:* Silva Tech 
-┃✦ *𝙿𝚕𝚊𝚝𝚏𝚘𝚛𝚖:* silva panel
+┃⫹⫺ *𝙽𝚊𝚖𝚎:* ${global.author}
+┃⫹⫺ *𝚃𝚘𝚝𝚊𝚕:* ${totalf} + Features
+┃⫹⫺ *𝚅𝚎𝚛𝚜𝚒𝚘𝚗:* V1.4.3
+┃⫹⫺ *𝙿𝚛𝚎𝚏𝚒𝚡:* Multi Prefix 
+┃⫹⫺ *𝙾𝚠𝚗𝚎𝚛:* Shizo The Techie
+┃⫹⫺ *𝙿𝚕𝚊𝚝𝚏𝚘𝚛𝚖:* 𝙻𝚒𝚗𝚞𝚡
 ┖─────────┈┈┈〠⸙࿉༐
     %readmore`.trimStart(),
   header: '┏━━━━ ❨ *%category* ❩ ━━┄┈ •⟅ ',
-  body: ' ┃⫹⫺ %cmd',
+  body: ' ┃✦ %cmd',
   footer: '┗━═┅┅┅┅═━–––––––๑\n',
   after: `*Made by ♡ ${global.oname}*`,
 }
@@ -117,7 +118,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './media/contact.png')
 
     // Sending the menu
-    conn.sendButton(m.chat, text.replace(), author, pp, [['SILVA 😎', '.owner'], ['SPEED 🛫', '!ping'], ['GROUP 🛩', '.grp']], null, [['INSTAGRAM', smlink]], m)
+    conn.sendButton(m.chat, text.replace(), author, pp, [['Silva⚡', '.owner'], ['Bot Speed 🚀', '.ping']], null, [['Follow Owner 🫣', smlink], ['Join Group 🥰', gclink]], null, [['Bot Channel 🫣', smlink], ['Bot Web 🥰', gclink]],m)
     
   } catch (e) {
     conn.reply(m.chat, 'ERROR IN MENU', m)
